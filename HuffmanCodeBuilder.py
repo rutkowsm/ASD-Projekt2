@@ -57,5 +57,5 @@ while len(nodes) > 1:
     nodes.append(newNode)
 
 
-print(returnPath(nodes[0]))
-print(sortedFreq)
+# print(returnPath(nodes[0]))
+# print(sortedFreq)
