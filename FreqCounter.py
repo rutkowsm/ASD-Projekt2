@@ -1,9 +1,3 @@
-from operator import itemgetter
-import filereader
-# Liczenie znaków
-# Definicja funkcji liczącej
-
-
 def countCharacters(text):
 
     textList = list(text)
@@ -36,29 +30,31 @@ def countCharacters(text):
 
     x = 0
     while x < uniqueCharCount:
-        finalTable.append({'char': uniqueChars[x], 'freq': freqTable[x]})
+        finalTable.append([uniqueChars[x], freqTable[x]])
         x = x + 1
 
     return finalTable
 
-    ###########################
-    # Testing block
-    # x = 15
 
-    # if freqTable[x] == text.count(uniqueChars[x]):
-    #     print("Result is the same!")
-    # else:
-    #     print("Results do not match!")
-    ###########################
-
-# Definicja funkcji budującej drzewo binarne znaków danego tekstu
-
-
-def huffmanTree(text):
+def listOfChar(text):
     charCount = countCharacters(text)
 
-    charCountSorted = sorted(charCount, key=itemgetter('freq'))
-    print(charCountSorted)
+    i = 0
+    charList = []
+    while i < len(charCount):
+        charList.append(charCount[i][0])
+        i = i + 1
+
+    return charList
 
 
-huffmanTree(filereader.reader())
+def listOfFreq(text):
+    charCount = countCharacters(text)
+
+    i = 0
+    freqList = []
+    while i < len(charCount):
+        freqList.append(charCount[i][1])
+        i = i + 1
+
+    return freqList
