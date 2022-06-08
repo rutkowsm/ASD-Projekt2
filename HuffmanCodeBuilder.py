@@ -1,8 +1,7 @@
 import Sorter
 import filereader
 import NodeClass
-import FreqCounter
-import HeapSortNodes
+import HeapSort
 
 text = filereader.reader()
 sortedFreq = Sorter.sortFreqArray(text)
@@ -48,7 +47,7 @@ while len(nodes) > 1:
     newChar = left.char+right.char
     newFreq = left.freq+right.freq
     newNode = node(newChar, newFreq, left, right)
-    HeapSortNodes.heapSortNd(nodes)
+    HeapSort.heapSortNd(nodes)
 
     # remove the 2 nodes and add their
     # parent as new node among others
