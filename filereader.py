@@ -1,6 +1,4 @@
-
 from typing import final
-
 
 try:
     def reader():

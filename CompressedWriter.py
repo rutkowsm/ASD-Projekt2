@@ -8,13 +8,14 @@ srcText = filereader.reader()
 
 converted = Converter.compressText(srcText, dictionary)
 
-fname = "./Pliki/CompressedJabberwooky.txt"
+fname = "./Pliki/CompressedJaberwooky.txt"
 
 newConverted = ''
 
 i = 0
 lenConverted = len(converted)
-with open(fname, "w") as fout:
+with open(fname, "a") as fout:
+    fout.write(str('\n'))
     while i < lenConverted:
         newConverted = newConverted + converted[i]
         i = i + 1
